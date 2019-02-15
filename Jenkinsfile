@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'aaronghost/androidsdk:latest'
-      args '-v /jenkins/.gradle:/jenkins/.gradle -v /jenkins/.android:/jenkins/.android -v /Android/:/Android/'
+      args '-v /jenkins:/jenkins -v /Android/:/Android/'
     }
 
   }
