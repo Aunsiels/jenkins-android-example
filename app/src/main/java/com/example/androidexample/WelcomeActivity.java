@@ -5,9 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.androidexample.MainActivity;
-import com.example.androidexample.R;
-
 public class WelcomeActivity extends Activity {
 
     @Override
@@ -22,5 +19,14 @@ public class WelcomeActivity extends Activity {
                 startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
             }
         });
+    }
+
+    private void someMethod(int variable) {
+        switch (variable) {
+            case 1:
+                System.out.println("1");
+            case 2:
+                System.out.println("2");
+        }
     }
 }
