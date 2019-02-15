@@ -14,8 +14,8 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh './gradlew :test'
-        junit 'build/test-results/test/*xml'
+        sh './gradlew test'
+        junit 'app/build/test-results/test*/*xml'
         sh './gradlew jacocoTestReport'
         jacoco()
       }
