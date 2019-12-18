@@ -1,8 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'aaronghost/androidsdk:latest'
-      args '-v /jenkins:/jenkins -v /Android/:/Android/'
+    dockerfile {
+      filename 'Dockerfile'
     }
 
   }
@@ -12,6 +11,7 @@ pipeline {
         sh './gradlew :build'
       }
     }
+
     stage('Test') {
       steps {
         sh './gradlew test || exit 0'
@@ -20,6 +20,7 @@ pipeline {
         jacoco()
       }
     }
+
     stage('Static Tests') {
       steps {
         sh './gradlew checkstyle || exit 0'
@@ -30,10 +31,6 @@ pipeline {
         recordIssues(enabledForFailure: true, tool: spotBugs(pattern: 'app/build/reports/findbugs/*xml'), sourceCodeEncoding: 'UTF-8')
       }
     }
-  }
-  environment {
-    GRADLE_USER_HOME = '/jenkins/.gradle'
-    HOME = '/jenkins'
-    _JAVA_OPTIONS = '-Duser.home=/jenkins'
+
   }
 }
