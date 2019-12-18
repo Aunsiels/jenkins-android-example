@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo $HOME'
-        sh 'ls -la ~'
+        sh 'pwd'
         sh 'ls -la .'
         sh './gradlew :build'
       }
@@ -37,6 +37,6 @@ pipeline {
 
   }
   environment {
-    _JAVA_OPTIONS = '-Duser.home=/'
+    _JAVA_OPTIONS = '-Duser.home=.'
   }
 }
