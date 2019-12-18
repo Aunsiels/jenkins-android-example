@@ -34,7 +34,6 @@ pipeline {
   environment {
     GRADLE_USER_HOME = '/jenkins/.gradle'
     HOME = '/jenkins'
-    ANDROID_HOME = '/Android'
     _JAVA_OPTIONS = '-Duser.home=/jenkins'
   }
 }
