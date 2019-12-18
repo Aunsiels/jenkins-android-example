@@ -34,6 +34,7 @@ pipeline {
 
   }
   environment {
-    HOME = '/root/'
+    HOME = '/'
+    _JAVA_OPTIONS = '$HOME'
   }
 }
