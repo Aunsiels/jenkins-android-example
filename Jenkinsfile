@@ -35,6 +35,6 @@ pipeline {
   }
   environment {
     HOME = '/root/'
-    _JAVA_OPTIONS = '/root/'
+    _JAVA_OPTIONS = '-Duser.home=$HOME'
   }
 }
