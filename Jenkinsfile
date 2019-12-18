@@ -8,6 +8,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh 'echo $HOME'
+        sh 'ls -la ~'
+        sh 'ls -la .'
         sh './gradlew :build'
       }
     }
