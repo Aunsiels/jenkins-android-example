@@ -33,4 +33,7 @@ pipeline {
     }
 
   }
+  environment {
+    HOME = '/root/'
+  }
 }
